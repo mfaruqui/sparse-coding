@@ -1,7 +1,7 @@
 #Sparse Coding
 Manaal Faruqui, mfaruqui@cs.cmu.edu
 
-This tool implements sparse coding (Lee et al, 2006) for converting dense word vector representations to highly sparse vectors. The implementation can be run on multiple cores in parallel with asynchronous updates. The sparsity is introduced in the word vectors using L1 regularization.
+This tool implements sparse coding for converting dense word vector representations to highly sparse vectors. The implementation can be run on multiple cores in parallel with asynchronous updates. The sparsity is introduced in the word vectors using L1 regularization.
 
 ###Data you need
 
@@ -20,5 +20,17 @@ INCLUDES = -I PATH_TO_EIGEN
 
 After this just execute the following command:
 
-```make``` for sparse coding
-```make nonneg``` for non-negative sparse coding
+For sparse coding: ```make```
+
+For non-negative sparse coding: ```make nonneg```
+
+###Running the executable
+
+For sparse coding: ```sparse.o```
+
+For non-negative sparse coding: ```nonneg.o```
+
+Usage: ```./sparse.o vec_corpus factor l1_reg l2_reg num_cores outfilename```
+Example: ```./sparse.o sample_vecs.txt 10 0.5 1e-5 1 out_vecs.txt```
+
+This example would exapnd the vectors in sample_vecs.txt to 10 times their original length.
