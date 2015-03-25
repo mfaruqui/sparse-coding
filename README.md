@@ -31,6 +31,7 @@ For sparse coding: ```sparse.o```
 For non-negative sparse coding: ```nonneg.o```
 
 Usage: ```./sparse.o vec_corpus factor l1_reg l2_reg num_cores outfilename```
+
 Example: ```./sparse.o sample_vecs.txt 10 0.5 1e-5 1 out_vecs.txt```
 
-This example would exapnd the vectors in sample_vecs.txt to 10 times their original length.
+This example would expand the vectors in sample_vecs.txt to 10 times their original length.
