@@ -5,9 +5,7 @@ This tool implements sparse coding for converting dense word vector representati
 
 ###Data you need
 
-1. Word Vector File
-
-Each vector file should have one word vector per line as follows (space delimited):-
+Word Vector File. Each vector file should have one word vector per line as follows (space delimited):-
 
 ```the -1.0 2.4 -0.3 ...```
 
