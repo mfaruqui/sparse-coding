@@ -1,7 +1,7 @@
 #Sparse Coding
 Manaal Faruqui, mfaruqui@cs.cmu.edu
 
-This tool implements sparse coding for converting dense word vector representations to highly sparse vectors. The implementation can be run on multiple cores in parallel with asynchronous updates. The sparsity is introduced in the word vectors using L1 regularization.
+This tool implements sparse coding for converting dense word vector representations to highly sparse vectors. The implementation can be run on multiple cores in parallel with asynchronous updates. The sparsity is introduced in the word vectors using L1 regularization. For technical details please refer to Faruqui et al (2015).
 
 ###Data you need
 
