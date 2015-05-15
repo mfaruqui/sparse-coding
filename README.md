@@ -33,3 +33,14 @@ Usage: ```./sparse.o vec_corpus factor l1_reg l2_reg num_cores outfilename```
 Example: ```./sparse.o sample_vecs.txt 10 0.5 1e-5 1 out_vecs.txt```
 
 This example would expand the vectors in sample_vecs.txt to 10 times their original length.
+
+###Reference
+
+```
+@InProceedings{faruqui:2015:sparse,
+  author    = {Faruqui, Manaal and Tsvetkov, Yulia and Yogatama, Dani and Dyer, Chris and Smith, Noah A.},
+  title     = {Sparse Binary Word Vector Representations},
+  booktitle = {Proceedings of ACL},
+  year      = {2015},
+}
+```
