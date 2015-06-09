@@ -39,7 +39,7 @@ This example would expand the vectors in sample_vecs.txt to 10 times their origi
 ```
 @InProceedings{faruqui:2015:sparse,
   author    = {Faruqui, Manaal and Tsvetkov, Yulia and Yogatama, Dani and Dyer, Chris and Smith, Noah A.},
-  title     = {Sparse Binary Word Vector Representations},
+  title     = {Sparse Overcomplete Word Vector Representations},
   booktitle = {Proceedings of ACL},
   year      = {2015},
 }
