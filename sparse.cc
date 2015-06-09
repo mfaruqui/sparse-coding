@@ -238,7 +238,7 @@ int main(int argc, char **argv) {
     cerr << "Model specification" << endl;
     cerr << "----------------" << endl;
     cerr << "Vector length: " << word_vecs[0].size() << endl;
-    cerr << "Dictionary length: " << factor * word_vecs[0].size() << endl;
+    cerr << "Output vector length: " << factor * word_vecs[0].size() << endl;
     cerr << "L2 Reg (Dict): " << l2_reg << endl;
     cerr << "L1 Reg (Atom): " << l1_reg << endl;
     cerr << "Number of Cores: " << num_cores << endl;
