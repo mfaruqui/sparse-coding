@@ -1,15 +1,18 @@
 CC = g++
-INCLUDES = -I /opt/tools/eigen-eigen-ffa86ffb5570 
-CFLAGS = -std=c++11 -O3 -ffast-math
+INCLUDES =  -I/usr/include/eigen3/
+CFLAGS = -std=c++11 -g -O3 -ffast-math 
 LIBS = -fopenmp
-SRCS = sparse.cc utils.cc
-SRCS_NO = sparse-nonneg.cc utils.cc
-OUTPUT = sparse.o
-NONNEG = nonneg.o
+CNPY = -Lcnpy cnpy/libcnpy.a
+TARGET = sparse nonneg sparse-cnpy nonneg-cnpy
+all: $(TARGET)
 
-make:
-	$(CC) $(INCLUDES) $(CFLAGS) $(SRCS) -o $(OUTPUT) $(LIBS)
-nonneg:
-	$(CC) $(INCLUDES) $(CFLAGS) $(SRCS_NO) -o $(NONNEG) $(LIBS)
+sparse: sparse.cc utils.cc
+	$(CC) $(INCLUDES) $(CFLAGS) $^ -o $@ $(LIBS)
+nonneg: sparse-nonneg.cc utils.cc
+	$(CC) $(INCLUDES) $(CFLAGS) $^ -o $@ $(LIBS)
+sparse-cnpy: sparse-cnpy.cc utils.cc
+	$(CC) $(INCLUDES) $(CFLAGS) $^ -o $@ $(LIBS) $(CNPY)
+nonneg-cnpy: nonneg-cnpy.cc utils.cc
+	$(CC) $(INCLUDES) $(CFLAGS) $^ -o $@ $(LIBS) $(CNPY)
 clean:
-	$(RM) *.o *~
+	$(RM) $(TARGET) *~

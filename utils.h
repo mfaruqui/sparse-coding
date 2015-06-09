@@ -19,21 +19,17 @@ typedef Matrix<double, Dynamic, 1> Col;
 typedef Matrix<double, 1, Dynamic> Row;
 typedef Matrix<double, Dynamic, Dynamic> Mat;
 
-typedef std::tr1::unordered_map<string, unsigned> mapStrUnsigned;
 typedef std::tr1::unordered_map<int, Col> mapIntCol;
 typedef std::tr1::unordered_map<int, Mat> mapIntMat;
 typedef std::tr1::unordered_map<int, unsigned> mapIntUnsigned;
 typedef std::tr1::unordered_map<unsigned, unsigned> mapUnsUns;
 typedef std::tr1::unordered_map<unsigned, double> mapUnsDouble;
 
-typedef std::tr1::unordered_map<unsigned, string> mapUnsignedStr;
-typedef std::tr1::unordered_map<int, unsigned> mapIntUnsigned;
-typedef std::tr1::unordered_map<string, bool> mapStrBool;
+typedef vector<string> mapUnsignedStr;
 
 vector<string> split_line(const string&, char);
 
-void ReadVecsFromFile(const string&, mapStrUnsigned*, vector<Col>*);
-void ReadVecsFromFile(const string&, mapUnsignedStr*, vector<Col>*);
+void ReadVecsFromFile(const string&, mapUnsignedStr&, vector<Col>&);
 
 void ElemwiseTanh(Col*);
 void ElemwiseTanhGrad(const Col&, Col*);

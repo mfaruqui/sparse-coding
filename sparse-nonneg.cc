@@ -156,8 +156,7 @@ class Model {
     if (outfile.is_open()) {
       outfile.precision(3);
       for(unsigned i = 0; i < atom.size(); ++i) {
-        auto it = vocab.find(i);
-        outfile << it->second << " ";
+        outfile << vocab[i] << " ";
         for (unsigned j = 0; j < atom[i].var.rows(); ++j)
           outfile << atom[i].var[j] << " ";
         outfile << endl;
@@ -232,7 +231,7 @@ int main(int argc, char **argv) {
     int num_cores = stoi(argv[5]);
     string outfilename = argv[6];
 
-    ReadVecsFromFile(vec_corpus, &vocab, &word_vecs);
+    ReadVecsFromFile(vec_corpus, vocab, word_vecs);
  
     cerr << "Model specification" << endl;
     cerr << "----------------" << endl;
