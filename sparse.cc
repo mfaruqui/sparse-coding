@@ -155,8 +155,7 @@ class Model {
     if (outfile.is_open()) {
       outfile.precision(3);
       for(unsigned i = 0; i < atom.size(); ++i) {
-        auto it = vocab.find(i);
-        outfile << it->second << " ";
+        outfile << vocab[i] << " ";
         for (unsigned j = 0; j < atom[i].var.rows(); ++j)
           outfile << atom[i].var[j] << " ";
         outfile << endl;
@@ -184,7 +183,7 @@ class Model {
 
 void Train(const string& out_file, const int& factor,
            const int& cores, const double& l1_reg, const double& l2_reg,
-           const vector<Col>& word_vecs, const mapUnsignedStr& vocab) {
+           vector<Col>& word_vecs, mapUnsignedStr& vocab) {
   Model model(factor, word_vecs[0].size(), word_vecs.size());
   double avg_error = 1, prev_avg_err = 0;
   int iter = 0;
@@ -233,12 +232,12 @@ int main(int argc, char **argv) {
     int num_cores = stoi(argv[5]);
     string outfilename = argv[6];
 
-    ReadVecsFromFile(vec_corpus, &vocab, &word_vecs);
+    ReadVecsFromFile(vec_corpus, vocab, word_vecs);
  
     cerr << "Model specification" << endl;
     cerr << "----------------" << endl;
-    cerr << "Input vector length: " << word_vecs[0].size() << endl;
-    cerr << "Output vector length: " << factor * word_vecs[0].size() << endl;
+    cerr << "Vector length: " << word_vecs[0].size() << endl;
+    cerr << "Dictionary length: " << factor * word_vecs[0].size() << endl;
     cerr << "L2 Reg (Dict): " << l2_reg << endl;
     cerr << "L1 Reg (Atom): " << l1_reg << endl;
     cerr << "Number of Cores: " << num_cores << endl;
