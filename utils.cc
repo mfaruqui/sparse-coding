@@ -39,7 +39,7 @@ void ReadVecsFromFile(const string& vec_file_name, mapStrUnsigned* t_vocab,
 
     assert (word_vecs->size() == vocab.size());
   } else {
-    cerr << "Could not open " << vec_file;
+    cerr << "Could not open " << vec_file_name << endl;
     exit(0);
   }
 }
